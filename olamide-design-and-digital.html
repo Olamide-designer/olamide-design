@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olamide Designs</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #ddd;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .designs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+
+    .sample {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #8b0000, #111);
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .order-button {
+      margin-top: 20px;
+      background: #159447;
+    }
+
+    .payment-button {
+      margin-top: 10px;
+      background: #7b2cff;
+    }
+
+    .contact {
+      background: white;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    .order-section {
+      background: white;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .order-section h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>OLAMIDE DESIGNS</h1>
+  <p>Professional designs for your business</p>
+</header>
+
+<section class="hero">
+  <h2>Need a Beautiful Advert?</h2>
+  <p>Choose a design and place your order.</p>
+</section>
+
+<div class="container">
+
+  <div class="designs">
+
+    <div class="card">
+      <div class="sample">LUXURY</div>
+      <div class="card-content">
+        <h3>Luxury Advert</h3>
+        <p>Perfect for fashion, bags, perfume and premium products.</p>
+        <div class="price">₦2,000</div>
+        <button onclick="selectDesign('Luxury Advert')">
+          Order This Design
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sample"
+           style="background:linear-gradient(135deg,#0047ab,#00a6ff);">
+        BUSINESS
+      </div>
+      <div class="card-content">
+        <h3>Business Advert</h3>
+        <p>Professional adverts for shops and businesses.</p>
+        <div class="price">₦1,500</div>
+        <button onclick="selectDesign('Business Advert')">
+          Order This Design
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sample"
+           style="background:linear-gradient(135deg,#ff4b00,#ff9d00);">
+        FOOD
+      </div>
+      <div class="card-content">
+        <h3>Food Advert</h3>
+        <p>Eye-catching designs for restaurants and food vendors.</p>
+        <div class="price">₦1,500</div>
+        <button onclick="selectDesign('Food Advert')">
+          Order This Design
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="order-section" id="order">
+
+    <h2>Place Your Order</h2>
+
+    <label>Your Name</label>
+    <input id="name" type="text" placeholder="Enter your name">
+
+    <label>Your Phone Number</label>
+    <input id="phone" type="tel" placeholder="08012345678">
+
+    <label>Design Type</label>
+    <select id="design">
+      <option>Luxury Advert</option>
+      <option>Business Advert</option>
+      <option>Food Advert</option>
+    </select>
+
+    <label>What do you want?</label>
+    <textarea id="details"
+      placeholder="Tell me what you want on your design..."></textarea>
+
+    <button class="order-button" onclick="sendOrder()">
+      📲 SEND ORDER ON WHATSAPP
+    </button>
+
+    <button class="payment-button" onclick="makePayment()">
+      💳 PAY FOR DESIGN
+    </button>
+
+  </div>
+
+  <div class="contact">
+    <h2>Contact Me</h2>
+    <p>📱 WhatsApp: 08052702885</p>
+    <p>📞 Phone: 08063688675</p>
+    <p>📧 Email: eemmanu145@gmail.com</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Olamide Designs
+</footer>
+
+<script>
+
+  // Your WhatsApp number
+  const MY_WHATSAPP = "2348052702885";
+
+  function selectDesign(designName) {
+    document.getElementById("design").value = designName;
+
+    document.getElementById("order").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+  function sendOrder() {
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const design = document.getElementById("design").value;
+    const details = document.getElementById("details").value;
+
+    if (!name || !phone || !details) {
+      alert("Please fill in all the information.");
+      return;
+    }
+
+    const message =
+      "NEW DESIGN ORDER%0A%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Customer Phone: " + encodeURIComponent(phone) + "%0A" +
+      "Design: " + encodeURIComponent(design) + "%0A%0A" +
+      "Request:%0A" +
+      encodeURIComponent(details);
+
+    const whatsappURL =
+      "https://wa.me/" + MY_WHATSAPP + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+  }
+
+  function makePayment() {
+    alert(
+      "Online payment has not been connected yet. " +
+      "The next step is to connect Paystack or Flutterwave."
+    );
+  }
+
+</script>
+
+</body>
+</html>
